@@ -1,0 +1,6 @@
+name: TreasurePlugins
+version: ${project.version}
+main: com.github.sarhatabaot.treasureplugins.TreasurePlugins
+description: ${project.description}
+website: ${project.url}
+api-version: 1.13

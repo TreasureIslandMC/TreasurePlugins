@@ -1,0 +1,8 @@
+# The exact plugin name, you can see this by running /plugins in your console.
+hide-plugins:
+  -
+show-version: true
+# LIST - Show plugins on one line
+# LINE - Show plugins on a list
+# Defaults to LINE
+style: LINE
