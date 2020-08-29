@@ -6,14 +6,14 @@
 
     <groupId>com.github.sarhatabaot</groupId>
     <artifactId>TreasurePlugins</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>TreasurePlugins</name>
 
-    <url>https://github.com/sarhatabaot/TreasurePlugins</url>
+    <url>https://github.com/TreasureIslandMC/TreasurePlugins</url>
 
-    <description>Display additional plugin information ingame.</description>
+    <description>Display additional plugin information in-game.</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -87,20 +87,21 @@
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
-            <artifactId>text-api</artifactId>
-            <version>3.0.3</version>
+            <artifactId>adventure-api</artifactId>
+            <version>4.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>net.kyori</groupId>
-            <artifactId>text-serializer-gson</artifactId>
-            <version>3.0.3</version>
+            <artifactId>adventure-text-serializer-gson</artifactId>
+            <version>4.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.github.KyoriPowered</groupId>
-            <artifactId>text-extras</artifactId>
-            <version>master-v3.0.3-g9a478a9-4</version>
+            <artifactId>adventure-platform</artifactId>
+            <version>9982705302</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>

@@ -1,7 +1,9 @@
 package com.github.sarhatabaot.treasureplugins;
 
-import net.kyori.text.TextComponent;
-import net.kyori.text.event.ClickEvent;
+
+import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,20 +34,20 @@ public final class TreasurePlugins extends JavaPlugin {
 		}
 	}
 
-	private TextComponent component (Plugin plugin){
+	private TextComponent component(Plugin plugin){
 		return TextComponent.builder().content(String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion()))
-				.hoverEvent(net.kyori.text.event.HoverEvent.showText(generatePluginHoverComponent(plugin)))
+				.hoverEvent(HoverEvent.showText(generatePluginHoverComponent(plugin)))
 				.clickEvent(ClickEvent.of(ClickEvent.Action.OPEN_URL,getSafeString(plugin.getDescription().getWebsite()))).build();
 	}
 
 	private TextComponent generatePluginHoverComponent(final Plugin plugin){
 		final String title = String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion());
 		return TextComponent.builder(title)
-				.append("\n")
+				.append(TextComponent.newline())
 				.append(TextComponent.of(getSafeString(plugin.getDescription().getAPIVersion())))
-				.append("\n")
+				.append(TextComponent.newline())
 				.append(TextComponent.of(getSafeString(plugin.getDescription().getDescription())))
-				.append("\n")
+				.append(TextComponent.newline())
 				.append(TextComponent.of("Click to see more information!")).build();
 	}
 
