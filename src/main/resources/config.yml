@@ -6,13 +6,13 @@ show-version: true
 # LINE - Show plugins on a list
 # Defaults to LINE
 style: LINE
-# Prefix the text sent. You can use any of the essentials color codes.
+# Prefix the text sent. You can use any hex color code.
 text-style:
   title:
     plugin-title: "&6"
     plugin-version: "&a"
   hover:
     plugin-title: "&6&b"
-    plugin-version: "&a"
-    plugin-description:
+    plugin-api-version: "&a"
+    plugin-description: "&7"
     plugin-link: "&5&b"
