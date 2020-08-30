@@ -4,6 +4,8 @@ package com.github.sarhatabaot.treasureplugins;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.format.Style;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -42,13 +44,21 @@ public final class TreasurePlugins extends JavaPlugin {
 	}
 
 	private TextComponent generatePluginHoverComponent(final Plugin plugin){
-		final String title = String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion());
-		return TextComponent.builder(title)
+		final String title = String.format("%s %s %s(%s)",TextStyle.Title.getPluginTitle(),plugin.getName(),TextStyle.Title.getPluginTitle(),plugin.getDescription().getVersion());
+		return TextComponent.builder()
+				.style(Style.of(TextDecoration.valueOf(TextStyle.Hover.getPluginTitle())))
+				.append(title)
+
 				.append(TextComponent.newline())
+				.style(Style.of(TextDecoration.valueOf(TextStyle.Hover.getPluginVersion())))
 				.append(TextComponent.of(getSafeString(plugin.getDescription().getAPIVersion())))
+
 				.append(TextComponent.newline())
+				.style(Style.of(TextDecoration.valueOf(TextStyle.Hover.getPluginDescription())))
 				.append(TextComponent.of(getSafeString(plugin.getDescription().getDescription())))
+
 				.append(TextComponent.newline())
+				.style(Style.of(TextDecoration.valueOf(TextStyle.Hover.getPluginLink())))
 				.append(TextComponent.of("Click to see more information!")).build();
 	}
 
@@ -58,5 +68,9 @@ public final class TreasurePlugins extends JavaPlugin {
 
 	public Map<String, TextComponent> getTextComponentCache() {
 		return textComponentCache;
+	}
+
+	private String color(final String message){
+		return ChatColor.translateAlternateColorCodes('&',message);
 	}
 }
