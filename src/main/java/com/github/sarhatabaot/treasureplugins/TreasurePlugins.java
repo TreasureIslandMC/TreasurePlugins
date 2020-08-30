@@ -4,6 +4,7 @@ package com.github.sarhatabaot.treasureplugins;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,7 +19,7 @@ public final class TreasurePlugins extends JavaPlugin {
 		saveDefaultConfig();
 		cacheTextComponents();
 		getServer().getPluginManager().registerEvents(new PluginCommand(this),this);
-
+		new Metrics(this,8712);
 	}
 
 	@Override

@@ -2,18 +2,16 @@ package com.github.sarhatabaot.treasureplugins;
 
 
 import net.kyori.adventure.audience.Audience;
-import net.kyori.adventure.platform.AudienceProvider;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.TextComponent;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class PluginCommand implements Listener {
-	private TreasurePlugins plugin;
-	private BukkitAudiences bukkitAudiences;
+	private final TreasurePlugins plugin;
+	private final BukkitAudiences bukkitAudiences;
 
 	public PluginCommand(final TreasurePlugins plugin) {
 		this.plugin = plugin;
