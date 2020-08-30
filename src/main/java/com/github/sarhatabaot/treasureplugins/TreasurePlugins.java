@@ -36,13 +36,14 @@ public final class TreasurePlugins extends JavaPlugin {
 	}
 
 	private TextComponent component(Plugin plugin){
-		return TextComponent.builder().content(String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion()))
+		String title = (plugin.getConfig().getBoolean("show-version.title")) ? String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion()) : String.format("%s",plugin.getName());
+		return TextComponent.builder().content(title)
 				.hoverEvent(HoverEvent.showText(generatePluginHoverComponent(plugin)))
 				.clickEvent(ClickEvent.of(ClickEvent.Action.OPEN_URL,getSafeString(plugin.getDescription().getWebsite()))).build();
 	}
 
 	private TextComponent generatePluginHoverComponent(final Plugin plugin){
-		final String title = String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion());
+		String title = (plugin.getConfig().getBoolean("show-version.hover")) ? String.format("%s (%s)",plugin.getName(),plugin.getDescription().getVersion()) : String.format("%s",plugin.getName());
 		return TextComponent.builder(title)
 				.append(TextComponent.newline())
 				.append(TextComponent.of(getSafeString(plugin.getDescription().getAPIVersion())))
