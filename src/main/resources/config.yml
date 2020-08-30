@@ -5,4 +5,13 @@ show-version: true
 # LIST - Show plugins on one line
 # LINE - Show plugins on a list
 # Defaults to LINE
-style: LINE
+style: LINE# Prefix the text sent. You can use any of the essentials color codes.
+  text-style:
+    title:
+      plugin-title: "&6"
+      plugin-version: "&a"
+    hover:
+      plugin-title: "&6&b"
+      plugin-version: "&a"
+      plugin-description:
+      plugin-link: "&5&b"
