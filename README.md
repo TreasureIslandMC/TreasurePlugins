@@ -17,10 +17,10 @@ TreasurePlugins currently supports 2 styles: **Line** and **List**.
 
 ## Line
 Show the plugins in a line.
-![Line](https://puu.sh/Gnn5J/64b09c4506.gif)
+![Line](https://puu.sh/GnnKk/407d4ce648.gif)
 ## List
 Show the plugin in a list.
-![List](https://puu.sh/Gnn7A/b60bc3bc72.gif)
+![List](https://puu.sh/GnnKl/1dbecab922.gif)
 
 ## Show Version
 Show the version in the list & while hovering over a plugin.
