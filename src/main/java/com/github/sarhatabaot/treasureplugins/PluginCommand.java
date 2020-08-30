@@ -5,11 +5,16 @@ import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.platform.AudienceProvider;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.format.Style;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.plugin.Plugin;
 
 public class PluginCommand implements Listener {
 	private TreasurePlugins plugin;
@@ -18,6 +23,7 @@ public class PluginCommand implements Listener {
 	public PluginCommand(final TreasurePlugins plugin) {
 		this.plugin = plugin;
 		this.bukkitAudiences = BukkitAudiences.create(plugin);
+		new TextStyle(plugin);
 	}
 
 	@EventHandler
@@ -36,6 +42,7 @@ public class PluginCommand implements Listener {
 			for (TextComponent component : plugin.getTextComponentCache().values()){
 				builderComponent.append(component).append(TextComponent.of(", "));
 			}
+
 			TextComponent lineComponent = builderComponent.build();
 			audience.sendMessage(lineComponent);
 		} else {
@@ -43,4 +50,9 @@ public class PluginCommand implements Listener {
 				audience.sendMessage(component);
 		}
 	}
+
+
+
+
+	
 }
